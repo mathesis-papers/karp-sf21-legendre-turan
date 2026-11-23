@@ -1,0 +1,57 @@
+{
+  "arithmetic": "Exact integers and rational numbers; outward floor and ceiling rounding",
+  "argument": "4095/4096",
+  "mu": "3/2",
+  "delta": "63/64",
+  "series": [
+    {
+      "degree": "33/64",
+      "steps": 10000,
+      "scale": 1000000000000,
+      "term_lower_scaled": -2767853,
+      "term_upper_scaled": -2765298,
+      "sum_lower_scaled": -2284872334619,
+      "sum_upper_scaled": -2284856488431,
+      "tail_bound": "2266871607/200000000000",
+      "enclosure": [
+        "-1148103346327/500000000000",
+        "-568380532599/250000000000"
+      ]
+    },
+    {
+      "degree": "3/2",
+      "steps": 10000,
+      "scale": 1000000000000,
+      "term_lower_scaled": 2769448,
+      "term_upper_scaled": 2772012,
+      "sum_lower_scaled": 1821604319336,
+      "sum_upper_scaled": 1821620117692,
+      "tail_bound": "567569457/50000000000",
+      "enclosure": [
+        "452563232549/250000000000",
+        "114560719177/62500000000"
+      ]
+    },
+    {
+      "degree": "159/64",
+      "steps": 10000,
+      "scale": 1000000000000,
+      "term_lower_scaled": -2770040,
+      "term_upper_scaled": -2767484,
+      "sum_lower_scaled": -1516986390784,
+      "sum_upper_scaled": -1516970637096,
+      "tail_bound": "56716569/5000000000",
+      "enclosure": [
+        "-191041213073/125000000000",
+        "-47050853853/31250000000"
+      ]
+    }
+  ],
+  "turan_enclosure": [
+    "-1452157656028046589547/6250000000000000000000",
+    "-494472615502940139289/7812500000000000000000"
+  ],
+  "coarse_turan_upper": "-97/5000",
+  "terminating_series_controls": 18,
+  "status": "ALL_CHECKS_OK"
+}

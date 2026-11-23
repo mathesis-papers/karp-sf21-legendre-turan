@@ -1,0 +1,380 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\F}{F}
+\title{A rational counterexample to Karp's fractional-degree\newline Legendre Tur\'an conjecture}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+\and Wenlin Zhang\\\small National University of Singapore\\\small ChronoAI Pte Ltd, Singapore}
+\date{November 15, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Karp's Conjecture 4 in his 2011 SF21 presentation
+\cite[physical PDF p.~52, repeated on pp.~53--54]{karp} fails at
+$\mu=3/2$, $\delta=63/64$, and $y=4095/4096$:
+exact rational series bounds give a Legendre Tur\'anian at most
+$-97/5000$, with all three degrees positive.
+The standard zero-balanced hypergeometric expansion also gives
+counterexamples at every positive noninteger central degree, for shifts
+sufficiently close to one. For each fixed admissible degree and shift,
+the Tur\'anian is positive near both ends of $0<y<1$; hence the explicit
+counterexample lies between at least two interior zeros.
+\end{abstract}
+
+\section{The question and the counterexample}
+For real $\nu$ and $0<y<1$, set
+\begin{equation}\label{defF}
+ \F_\nu(y)={}_2F_1(-\nu,1+\nu;1;y)
+ =\sum_{n=0}^{\infty}\frac{(-\nu)_n(1+\nu)_n}{(n!)^2}y^n,
+\end{equation}
+where $(a)_0=1$ and $(a)_n=a(a+1)\cdots(a+n-1)$ for $n\geq1$.
+This is the Ferrers function $\mathsf P_\nu(1-2y)$ in the standard
+normalization \cite[\S14.3(i)]{dlmflegendre}; the series convention is
+\cite[\S15.2(i)]{dlmfhypergeometric}. Define
+\[
+ T_{\mu,\delta}(y)=\F_\mu(y)^2-
+ \F_{\mu+\delta}(y)\F_{\mu-\delta}(y).
+\]
+Following the classical integer-degree, unit-shift inequality, Karp
+\cite[p.~52, Conjecture~4]{karp} states:
+\begin{quote}
+``Tur\'an inequality is true for all $\mu>0$ and $0<\delta<1$.''
+\end{quote}
+Here the displayed inequality on that page is $T_{\mu,\delta}(y)>0$
+for $0<y<1$.
+The displayed conjecture has no sign restriction on the function values.
+Direct series enclosures handle the sign changes that prevent an argument
+using logarithms of positive values.
+
+\begin{theorem}\label{thm:main}
+Let $y_*=4095/4096$. Then
+\begin{align*}
+ -\frac{23}{10}&\leq \F_{33/64}(y_*)\leq-\frac{227}{100},\\
+ \frac{181}{100}&\leq \F_{3/2}(y_*)\leq\frac{184}{100},\\
+ -\frac{153}{100}&\leq \F_{159/64}(y_*)\leq-\frac{150}{100}.
+\end{align*}
+Consequently,
+\begin{equation}\label{neg}
+ T_{3/2,\,63/64}(y_*)\leq
+ \left(\frac{184}{100}\right)^2-
+ \frac{227}{100}\frac{150}{100}
+ =-\frac{97}{5000}<0.
+\end{equation}
+Thus both the strict and non-strict forms of the conjectured comparison
+fail, even with $\mu-\delta>0$.
+\end{theorem}
+The non-strict version is not a separate assertion in the source; it is
+a weaker comparison that fails at the same point.
+
+\section{Exact enclosures and proof}
+Write $u_n=(-\nu)_n(1+\nu)_ny^n/(n!)^2$. Multiplication of rising
+factorials gives, including cases where a term vanishes,
+\begin{equation}\label{recurrence}
+ u_0=1,\qquad
+ u_{n+1}=u_n\,y\frac{(n-\nu)(n+\nu+1)}{(n+1)^2}.
+\end{equation}
+If $n\geq\nu\geq0$, the last rational factor lies in $[0,1]$:
+its numerator is nonnegative and equals
+$(n+1)^2-(n+1)-\nu(\nu+1)$. In particular,
+$|u_{n+1}|\leq y|u_n|$.
+
+\begin{lemma}\label{lemma:tail}
+If $N\geq\nu\geq0$, $0<y<1$, and $S_N=\sum_{n=0}^N u_n$, then
+\[
+ |\F_\nu(y)-S_N|\leq |u_N|\frac{y}{1-y}.
+\]
+\end{lemma}
+\begin{proof}
+Iteration of \eqref{recurrence} gives $|u_{N+j}|\leq |u_N|y^j$
+for $j\geq1$. Summing this geometric majorant proves absolute convergence
+of the tail and the stated bound.
+\end{proof}
+
+Here is a fully rational construction of the required finite bounds.
+Let $\nu=p/q$, $y=r/s$, with $q,s>0$, and fix $M=10^{12}$.
+Set $L_0=U_0=A_0=B_0=M$, and, for $0\leq n<N$, define
+\begin{align*}
+ a_n&=(nq-p)((n+1)q+p)r,&
+ b_n&=q^2(n+1)^2s,\\
+ L_{n+1}&=\left\lfloor\frac{\min(a_nL_n,a_nU_n)}{b_n}\right\rfloor,&
+ U_{n+1}&=\left\lceil\frac{\max(a_nL_n,a_nU_n)}{b_n}\right\rceil,\\
+ A_{n+1}&=A_n+L_{n+1},& B_{n+1}&=B_n+U_{n+1}.
+\end{align*}
+Because $b_n>0$, induction using \eqref{recurrence} yields
+\begin{equation}\label{invariants}
+ L_n\leq Mu_n\leq U_n,\qquad A_n\leq MS_n\leq B_n.
+\end{equation}
+The minimum and maximum are essential when $a_n$ is negative.
+For $N=10\,000$ and $y=y_*$, the integer recurrences give the following
+values; \texttt{check\_bounds.py} evaluates exactly these recurrences.
+
+\begin{center}
+\small
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+$\nu$ & $L_N$ & $U_N$ & $A_N$ & $B_N$\\
+\midrule
+$33/64$ & $-2767853$ & $-2765298$ & $-2284872334619$ & $-2284856488431$\\
+$3/2$ & $2769448$ & $2772012$ & $1821604319336$ & $1821620117692$\\
+$159/64$ & $-2770040$ & $-2767484$ & $-1516986390784$ & $-1516970637096$\\
+\bottomrule
+\end{tabular}
+\end{center}
+With $E=\max(|L_N|,|U_N|)$, Lemma~\ref{lemma:tail},
+\eqref{invariants}, and $y_* /(1-y_*)=4095$ give
+\begin{equation}\label{enclosure}
+ \frac{A_N-4095E}{10^{12}}\leq\F_\nu(y_*)\leq
+ \frac{B_N+4095E}{10^{12}}.
+\end{equation}
+Substitution and integer comparisons give the three bounds of
+Theorem~\ref{thm:main}. The central interval is positive, so its square is
+at most $(184/100)^2$. The two other intervals are negative, so their
+product is at least $(227/100)(150/100)$. This proves \eqref{neg}.
+Finally, $0<63/64<1$, $0<y_*<1$, and
+$3/2-63/64=33/64>0$, verifying every required parameter restriction.
+
+The file \texttt{check\_bounds.py} evaluates the displayed integer
+recurrences and compares the enclosures using exact rational arithmetic;
+\texttt{bounds.json} gives their values.
+
+\section{Endpoint behavior and further consequences}
+\begin{corollary}\label{cor:open}
+There is an open neighborhood of $(3/2,63/64,4095/4096)$ on which
+$\mu>\delta>0$, $\delta<1$, $0<y<1$, and $T_{\mu,\delta}(y)<0$.
+\end{corollary}
+\begin{proof}
+Take a compact neighborhood on which all three degrees belong to a
+compact subinterval of $(0,\infty)$ and $y\leq q_0<1$.
+Once $n$ exceeds every degree in that interval,
+\eqref{recurrence} bounds successive absolute terms by $q_0$.
+The first finitely many terms are continuous in degree and argument
+and uniformly bounded on that compact set. The resulting uniform
+geometric majorant proves continuity of each series sum, and hence
+of $T$. Strict negativity in \eqref{neg} and the strict parameter
+inequalities persist on a smaller open neighborhood.
+\end{proof}
+
+\begin{corollary}\label{cor:local}
+For every fixed $\mu>0$ and $0<\delta<1$, there is
+$\varepsilon=\varepsilon(\mu,\delta)>0$ such that
+$T_{\mu,\delta}(y)>0$ for $0<y<\varepsilon$.
+\end{corollary}
+\begin{proof}
+The convergent series at zero gives
+$\F_\nu(y)=1-\nu(\nu+1)y+O(y^2)$ for fixed real $\nu$.
+Substitution shows
+\[
+ T_{\mu,\delta}(y)=2\delta^2 y+O(y^2).
+\]
+The leading coefficient is positive. Dividing by $y>0$ and letting
+$y\downarrow0$ proves the result.
+\end{proof}
+There is also positivity sufficiently close to the other endpoint.
+Write $t=1-y$ and $L=-\log t$. For real $\nu$ put
+$a_\nu=-\sin(\pi\nu)/\pi$, and for $\nu\notin\mathbb Z$ put
+\[
+ h_\nu=2\psi(1)-\psi(-\nu)-\psi(1+\nu),
+\]
+where $\psi=\Gamma'/\Gamma$. The zero-balanced expansion
+\cite[Eq.~15.8.10, $m=0$]{dlmfcontinuation} and the reflection formula
+\cite[Eq.~5.5.3]{dlmfgamma} give, for fixed noninteger $\nu$,
+\begin{equation}\label{eq:asymptotic}
+ \F_\nu(y)=a_\nu(L+h_\nu)+O(tL),\qquad t\downarrow0.
+\end{equation}
+Indeed, the $k=0$ term of that expansion is
+$[L+2\psi(1)-\psi(-\nu)-\psi(1+\nu)]/
+[\Gamma(-\nu)\Gamma(1+\nu)]$, and
+$1/[\Gamma(-\nu)\Gamma(1+\nu)]=-\sin(\pi\nu)/\pi$.
+The remaining convergent power series, including its logarithmic factor,
+is $O(tL)$: both its analytic coefficient series have zero constant term.
+No gamma or digamma pole occurs for these noninteger parameters.
+For integer $\nu$, symmetry $\F_\nu=\F_{-\nu-1}$ reduces to a
+nonnegative integer degree, whose series terminates. Consequently,
+for every fixed real $\nu$, $\F_\nu(y)=a_\nu L+O(1)$.
+
+\begin{corollary}\label{cor:endpoint}
+For every fixed $\mu>0$ and $0<\delta<1$,
+\begin{equation}\label{eq:endpoint}
+ T_{\mu,\delta}(y)=\frac{\sin^2(\pi\delta)}{\pi^2}
+                 \log^2(1-y)+O(|\log(1-y)|),\qquad y\uparrow1.
+\end{equation}
+In particular, $T_{\mu,\delta}$ is positive sufficiently near $y=1$.
+\end{corollary}
+\begin{proof}
+Multiply the three expansions $\F_\nu=a_\nu L+O(1)$ and use
+\[
+ \sin^2(\pi\mu)-\sin(\pi(\mu+\delta))\sin(\pi(\mu-\delta))
+ =\sin^2(\pi\delta)>0.
+\]
+The error products are $O(L)$, and the leading coefficient is positive.
+\end{proof}
+
+\begin{corollary}\label{cor:family}
+For each positive noninteger $\mu$, there exist $y_\mu\in(0,1)$
+and $\eta_\mu\in(0,1)$ such that
+$T_{\mu,\delta}(y_\mu)<0$ for every $1-\eta_\mu<\delta<1$.
+If $\mu>1$, all three degrees are positive.
+\end{corollary}
+\begin{proof}
+First allow $\delta=1$. By the digamma recurrence
+$\psi(z+1)=\psi(z)+1/z$ \cite[Eq.~5.5.2]{dlmfgamma},
+\[
+ h_{\mu+1}=h_\mu-\frac{2}{\mu+1},\qquad
+ h_{\mu-1}=h_\mu+\frac{2}{\mu},\qquad
+ a_{\mu+1}=a_{\mu-1}=-a_\mu.
+\]
+Substituting \eqref{eq:asymptotic}, with $H=L+h_\mu$, gives
+\begin{align*}
+ T_{\mu,1}(y)
+ &=a_\mu^2\left[H^2-
+       \left(H-\frac{2}{\mu+1}\right)
+       \left(H+\frac{2}{\mu}\right)\right]+O(tL^2)\\
+ &=-\frac{2a_\mu^2}{\mu(\mu+1)}(L+h_\mu-2)+o(1).
+\end{align*}
+Since $a_\mu\ne0$, this tends to $-\infty$.
+Choose a fixed $y_\mu<1$ where it is negative.
+For this fixed argument, the hypergeometric series is continuous in
+degree: on any compact degree interval, the rational factor in
+\eqref{recurrence} tends uniformly to one, so the absolute term ratio
+is eventually at most some $\rho<1$. This proves local uniform
+convergence and continuity, including at terminating degrees.
+Thus negativity persists for all shifts sufficiently close to one from
+below. Finally, $\mu-\delta>\mu-1>0$ when $\mu>1$.
+\end{proof}
+This argument also shows that no endpoint interval of positivity in
+Corollary~\ref{cor:endpoint} can be uniform over all $0<\delta<1$
+at a fixed positive noninteger $\mu$: choose $y_\mu$ arbitrarily close
+to one before applying continuity in the shift.
+
+\begin{corollary}\label{cor:zeros}
+The function $T_{3/2,63/64}$ has at least two distinct zeros in $(0,1)$,
+one on each side of $4095/4096$.
+\end{corollary}
+\begin{proof}
+Corollaries~\ref{cor:local} and~\ref{cor:endpoint} give positive values
+on both sides of the negative value in Theorem~\ref{thm:main}.
+Continuity and the intermediate value theorem give the two zeros.
+\end{proof}
+
+\section{Relation to the posing source}
+The endpoint statements and the family in
+Corollary~\ref{cor:family} are not separate conjectures in the slides.
+They explain why a fixed-parameter endpoint test does not imply the
+global comparison. As a direct boundary calculation,
+$\F_0=1$, $\F_1=1-2y$, and $\F_2=1-6y+6y^2$, whence
+$T_{1,1}(y)=2y(1-y)>0$ on $(0,1)$.
+This is consistent with the classical integer-degree, unit-shift
+comparison recalled on p.~52 of \cite{karp}.
+
+The polynomial siblings on p.~31 have an elementary equality boundary.
+For $n\geq3$, $\alpha,\beta>0$, and positive $f_0,\ldots,f_n$, write
+their polynomial as
+\[
+ P_{\alpha,\beta}^{n}(x)=\sum_{k=0}^n\binom nk f_kf_{n-k}
+ [(x+\alpha)_k(x+\beta)_{n-k}-(x+\alpha+\beta)_k(x)_{n-k}],
+\]
+take a geometric sequence $f_k=cr^k$ with $c,r>0$.
+Both sums then equal $c^2r^n(2x+\alpha+\beta)_n$ by the
+rising-factorial Vandermonde identity, so $P_{\alpha,\beta}^{n}\equiv0$.
+This equality case was already recorded by Karp
+\cite[Lemma~3]{karppolynomial} for $f_k=1$; the geometric case follows
+by the constant factor $c^2r^n$.
+Thus a positive-coefficient assertion under non-strict log-concavity
+must exclude this boundary. The later formulations in
+\cite[p.~2, Conjectures~1--2]{karppolynomial} assume strict
+log-concavity. For $\alpha=\beta=1$, Karp's Theorem~1 there proves
+positive coefficients of $P_{1,1}^{n}(x-1)$, and hence of
+$P_{1,1}^{n}(x)$ by translating by one. This is a prior polynomial
+result, not a consequence of the Legendre counterexample.
+
+\begin{center}
+\small
+\begin{tabular}{@{}p{.44\linewidth}p{.49\linewidth}@{}}
+\toprule
+Source item or neighboring statement & Coverage\\
+\midrule
+Karp, Conjecture 4, pp.~52--54 & Refuted: Theorem~\ref{thm:main}, even on $\mu>\delta$.\\
+Non-strict comparison & Not asserted in the source; fails at the same point.\\
+Persistence near the witness & Not posed; proved in Corollary~\ref{cor:open}.\\
+Positivity near $y=0$ and $y=1$ & Not posed; proved for each fixed pair in Corollaries~\ref{cor:local} and~\ref{cor:endpoint}.\\
+Every positive noninteger central degree & Not posed; a negative interior value for shifts near one is proved in Corollary~\ref{cor:family}.\\
+Two interior zeros at the rational parameters & Not posed; proved in Corollary~\ref{cor:zeros}.\\
+Integer-degree, unit-shift comparison, p.~52 & Prior result recalled by Karp; the case $\mu=1$ is calculated above.\\
+Geometric equality case in the polynomial siblings & Reproved; prior proof \cite[Lemma~3]{karppolynomial} for the constant sequence, extended by scaling above.\\
+Conjecture 1, p.~31 (positive polynomial coefficients) & Non-strict reading fails for geometric sequences. Strict $\alpha=\beta=1$ case: prior proof \cite[Theorem~1]{karppolynomial}; other strict cases not covered.\\
+Conjecture 2, p.~31 (Hurwitz stability) & The geometric case is the zero polynomial; the nonzero, strictly log-concave case is not covered.\\
+Conjecture 3, p.~40 (removing discrete shifts in Theorems 5--6) & Not covered: its parameter shifts differ from the opposite degree shifts here.\\
+Pr\'ekopa--Ninh comparison, pp.~52--54 & Not covered: it involves ${}_2F_2$ and shifts its parameters together.\\
+General parameter classification, pp.~14--17; positive-valued restrictions & Not covered: no global sign or zero-free classification is given here.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{Verification scope}
+\begingroup
+\raggedright
+All formal names below have prefix
+\path{D5.S3.Analytic.GaussZeroBalanced}.
+In the pinned \href{https://github.com/the-omega-institute/trureturing/blob/b8d708b1b89112061f30f218f031c1bf3672ebd8/D5/S3/Analytic/GaussZeroBalanced/FractionalLegendreTuran.lean}{\texttt{FractionalLegendreTuran.lean}},
+the declaration \texttt{FractionalLegendreTuran.result}
+proves $\neg\,\texttt{claim}$, where \texttt{claim} is precisely the
+fully quantified strict comparison for $\mu>0$, $0<\delta<1$,
+and $0<y<1$ \cite{lean}.
+Its auxiliary declarations \texttt{minus\_enclosure},
+\texttt{center\_enclosure}, and \texttt{plus\_enclosure} establish
+the three intervals of Theorem~\ref{thm:main}; \texttt{witness\_negative}
+gives strict negativity. These auxiliary declarations are private to
+that file. The pinned
+\href{https://github.com/the-omega-institute/trureturing/blob/b8d708b1b89112061f30f218f031c1bf3672ebd8/D5/S3/Analytic/GaussZeroBalanced/Defs.lean}{\texttt{Defs.lean}}
+defines \texttt{Defs.gauss} as the real Gauss hypergeometric function;
+the pinned
+\href{https://github.com/the-omega-institute/trureturing/blob/b8d708b1b89112061f30f218f031c1bf3672ebd8/D5/S3/Analytic/GaussZeroBalanced/Series.lean}{\texttt{Series.lean}}
+proves \texttt{Series.coefficient\_recurrence} for $c>0$.
+The non-strict consequence and Corollaries~\ref{cor:open}--\ref{cor:zeros}
+are written proofs. The integer recurrence evaluations and terminating
+polynomial controls in \texttt{check\_bounds.py} are finite exact checks;
+they do not prove the endpoint expansions or the noninteger-degree family.
+\par\endgroup
+
+\begingroup
+\raggedright
+\begin{thebibliography}{9}
+\bibitem{karp} D.~Karp,
+\emph{Log-convexity and log-concavity for series in product ratios of
+rising factorials and gamma functions}, Special Functions in the 21st
+Century: Theory and Applications, Washington, DC, April 6--8, 2011.
+Conjecture~4, physical PDF pp.~52--54.
+\url{https://math.nist.gov/~DLozier/SF21/SF21slides/Karp.pdf}.
+\bibitem{dlmflegendre} NIST Digital Library of Mathematical Functions,
+\S14.3(i), hypergeometric representation of the Ferrers function.
+\url{https://dlmf.nist.gov/14.3.E1}.
+\bibitem{dlmfhypergeometric} NIST Digital Library of Mathematical Functions,
+\S15.2(i), Gauss series.
+\url{https://dlmf.nist.gov/15.2.E1}.
+\bibitem{karppolynomial} D.~Karp,
+\emph{Positivity of Toeplitz determinants formed by rising factorial
+series and properties of related polynomials}, arXiv:1203.1482v1,
+March 7, 2012. Lemma~3 and Theorem~1.
+\url{https://arxiv.org/abs/1203.1482v1}.
+\bibitem{dlmfcontinuation} NIST Digital Library of Mathematical Functions,
+Eq.~15.8.10, zero-balanced continuation formula ($m=0$).
+\url{https://dlmf.nist.gov/15.8.E10}.
+\bibitem{dlmfgamma} NIST Digital Library of Mathematical Functions,
+Eqs.~5.5.2--5.5.3, digamma recurrence and gamma reflection.
+\url{https://dlmf.nist.gov/5.5.E2};
+\url{https://dlmf.nist.gov/5.5.E3}.
+\bibitem{lean} \emph{FractionalLegendreTuran.lean}, declaration
+\texttt{result}, fixed-revision source.
+\url{https://github.com/the-omega-institute/trureturing/blob/b8d708b1b89112061f30f218f031c1bf3672ebd8/D5/S3/Analytic/GaussZeroBalanced/FractionalLegendreTuran.lean}.
+\end{thebibliography}
+\endgroup
+\smallskip
+\noindent\small\textcopyright\ 2026 Haobo Ma and Wenlin Zhang.
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+\end{document}

@@ -1,9 +1,30 @@
-# Mathesis paper template
+# A rational counterexample to Karp's fractional-degree Legendre Turán conjecture
 
-One repository for one exact Mathesis paper version. This template has no selected paper and no example books.
+**Authors:** Haobo Ma, Wenlin Zhang
 
-Authors can start from the [Mathesis LaTeX manuscript template](docs/layer-mathesis/MANUSCRIPT.md) for papers and short notes. Our own short notes use it as their default reference; sections and length follow the mathematical argument.
+Karp's Conjecture 4 in his 2011 SF21 presentation (physical PDF page 52, repeated on pages 53–54, https://math.nist.gov/~DLozier/SF21/SF21slides/Karp.pdf) fails at mu=3/2, delta=63/64, y=4095/4096: exact rational series bounds give a Legendre Turánian at most -97/5000, with all three degrees positive. The standard zero-balanced hypergeometric expansion also gives counterexamples at every positive noninteger central degree, for shifts sufficiently close to one. For each fixed admissible degree and shift, the Turánian is positive near both ends of 0<y<1; hence the explicit counterexample lies between at least two interior zeros.
 
-The upstream books template supplies the machinery; the Mathesis layer supplies the publisher adapter and the [enforced four-zone layout](docs/layer-mathesis/LAYOUT.md).
+- PDF: [frozen public file](paper.pdf)
+- License: CC-BY-4.0
+- Version: 2
+- Mathesis record: [karp-sf21-legendre-turan](https://mathesis-omega-research.apps.chrono-ai.fun/papers/karp-sf21-legendre-turan?version=2)
 
-Use [the publisher pipeline](docs/layer-mathesis/PIPELINE.md) to import a public projection with `paper.py fill`. It creates the paper record, one bilingual content skeleton and a generated paper README. Upgrade with `tbook template update`; keep preparation run records outside the repository.
+## How to cite
+
+Haobo Ma, Wenlin Zhang (2026). A rational counterexample to Karp's fractional-degree Legendre Turán conjecture. Mathesis, version 2. https://mathesis-omega-research.apps.chrono-ai.fun/papers/karp-sf21-legendre-turan?version=2
+
+## Statement progress
+
+| Statement | Formalization status | Source | Verification basis |
+|---|---|---|---|
+| Theorem (s1) | preparing | [Lean source](https://github.com/the-omega-institute/trureturing/blob/b8d708b1b89112061f30f218f031c1bf3672ebd8/D5/S3/Analytic/GaussZeroBalanced/FractionalLegendreTuran.lean) | No public receipt |
+| Lemma (s2) | preparing | [Lean source](https://github.com/the-omega-institute/trureturing/blob/b8d708b1b89112061f30f218f031c1bf3672ebd8/D5/S3/Analytic/GaussZeroBalanced/FractionalLegendreTuran.lean) | No public receipt |
+| Corollary (s3) | preparing | [Lean source](https://github.com/the-omega-institute/trureturing/blob/b8d708b1b89112061f30f218f031c1bf3672ebd8/D5/S3/Analytic/GaussZeroBalanced/FractionalLegendreTuran.lean) | No public receipt |
+| Corollary (s4) | preparing | [Lean source](https://github.com/the-omega-institute/trureturing/blob/b8d708b1b89112061f30f218f031c1bf3672ebd8/D5/S3/Analytic/GaussZeroBalanced/FractionalLegendreTuran.lean) | No public receipt |
+| Corollary (s5) | preparing | [Lean source](https://github.com/the-omega-institute/trureturing/blob/b8d708b1b89112061f30f218f031c1bf3672ebd8/D5/S3/Analytic/GaussZeroBalanced/FractionalLegendreTuran.lean) | No public receipt |
+| Corollary (s6) | preparing | [Lean source](https://github.com/the-omega-institute/trureturing/blob/b8d708b1b89112061f30f218f031c1bf3672ebd8/D5/S3/Analytic/GaussZeroBalanced/FractionalLegendreTuran.lean) | No public receipt |
+| Corollary (s7) | preparing | [Lean source](https://github.com/the-omega-institute/trureturing/blob/b8d708b1b89112061f30f218f031c1bf3672ebd8/D5/S3/Analytic/GaussZeroBalanced/FractionalLegendreTuran.lean) | No public receipt |
+
+## Contributions
+
+Original authors are listed above. Formalization contributors and attribution are retained in `formalization/nodes.json`; repository pull requests do not confer verification or credit. Submit formalization attempts through the Mathesis attempt path described in [CONTRIBUTING.md](CONTRIBUTING.md).

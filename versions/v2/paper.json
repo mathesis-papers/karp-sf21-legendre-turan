@@ -1,0 +1,66 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 82113,
+      "matches_public": true,
+      "path": "paper.pdf",
+      "public_sha256": "3c3e12942409f187aea3baa25ffa4ea241991ba2779c56ce4018a28825b14fcb",
+      "sha256": "3c3e12942409f187aea3baa25ffa4ea241991ba2779c56ce4018a28825b14fcb"
+    },
+    "source": {
+      "bytes": 12978,
+      "matches_public": true,
+      "path": "source.archive",
+      "public_sha256": "cc03f82775554a83db08a82908d615120829a767312d41739f0cf1d6aa9b2e72",
+      "sha256": "cc03f82775554a83db08a82908d615120829a767312d41739f0cf1d6aa9b2e72"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "Karp's Conjecture 4 in his 2011 SF21 presentation (physical PDF page 52, repeated on pages 53–54, https://math.nist.gov/~DLozier/SF21/SF21slides/Karp.pdf) fails at mu=3/2, delta=63/64, y=4095/4096: exact rational series bounds give a Legendre Turánian at most -97/5000, with all three degrees positive. The standard zero-balanced hypergeometric expansion also gives counterexamples at every positive noninteger central degree, for shifts sufficiently close to one. For each fixed admissible degree and shift, the Turánian is positive near both ends of 0<y<1; hence the explicit counterexample lies between at least two interior zeros.",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": null,
+    "current_version": 2,
+    "doi": null,
+    "lean_source": {
+      "revision": "b8d708b1b89112061f30f218f031c1bf3672ebd8",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/b8d708b1b89112061f30f218f031c1bf3672ebd8/D5/S3/Analytic/GaussZeroBalanced/FractionalLegendreTuran.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "bytes": 82113,
+      "sha256": "3c3e12942409f187aea3baa25ffa4ea241991ba2779c56ce4018a28825b14fcb",
+      "url": "/api/v1/collected-papers/karp-sf21-legendre-turan/files/pdf?version=2"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-23T16:07:23.281232830Z",
+    "record": "karp-sf21-legendre-turan",
+    "repository_name": "karp-sf21-legendre-turan",
+    "source": {
+      "bytes": 12978,
+      "sha256": "cc03f82775554a83db08a82908d615120829a767312d41739f0cf1d6aa9b2e72",
+      "url": "/api/v1/collected-papers/karp-sf21-legendre-turan/files/source?version=2"
+    },
+    "title": "A rational counterexample to Karp's fractional-degree Legendre Turán conjecture",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-23T16:07:23.281232830Z",
+        "revision": "2",
+        "version": 2
+      }
+    ],
+    "work": "karp-sf21-legendre-turan"
+  }
+}

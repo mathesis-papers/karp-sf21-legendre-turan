@@ -1,0 +1,25 @@
+{
+  "id": "karp-sf21-legendre-turan",
+  "revision": 2,
+  "problem_ids": ["karp-sf21-legendre-turan"],
+  "topic": "Karp's Conjecture 4 on fractional-degree Legendre Turan inequalities",
+  "title": "A rational counterexample to Karp's fractional-degree Legendre Turán conjecture",
+  "creators": [
+    {"name": "Haobo Ma", "affiliation": "ChronoAI Pte Ltd, Singapore"},
+    {"name": "Wenlin Zhang", "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"}
+  ],
+  "abstract": "Karp's Conjecture 4 in his 2011 SF21 presentation (physical PDF page 52, repeated on pages 53–54, https://math.nist.gov/~DLozier/SF21/SF21slides/Karp.pdf) fails at mu=3/2, delta=63/64, y=4095/4096: exact rational series bounds give a Legendre Turánian at most -97/5000, with all three degrees positive. The standard zero-balanced hypergeometric expansion also gives counterexamples at every positive noninteger central degree, for shifts sufficiently close to one. For each fixed admissible degree and shift, the Turánian is positive near both ends of 0<y<1; hence the explicit counterexample lies between at least two interior zeros.",
+  "summary": "A rational counterexample refutes Karp's fractional-degree conjecture. Written endpoint analysis proves positivity near both endpoints at fixed parameters and negative interior values for shifts near one at every positive noninteger central degree.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/b8d708b1b89112061f30f218f031c1bf3672ebd8/D5/S3/Analytic/GaussZeroBalanced/FractionalLegendreTuran.lean",
+  "source_url": "https://math.nist.gov/~DLozier/SF21/SF21slides/Karp.pdf",
+  "posing_locator": "Conjecture 4, physical PDF page 52, repeated on pages 53–54",
+  "coverage": {
+    "formal_declaration": "D5.S3.Analytic.GaussZeroBalanced.FractionalLegendreTuran.result : ¬ claim",
+    "formal_statement": "Negation of the fully quantified strict comparison for real mu>0, 0<delta<1 and 0<y<1",
+    "written_proofs": ["Explicit counterexample using exact series enclosures", "Failure of the non-strict comparison with all degrees positive; this weaker comparison is not separately asserted in the posing source", "Open neighborhood of strict counterexamples", "Positivity near zero for each fixed admissible parameter pair", "T(mu,delta,y) = sin(pi*delta)^2/pi^2 * log(1-y)^2 + O(abs(log(1-y))) as y tends to one for each fixed admissible pair", "For every positive noninteger mu, a fixed interior y_mu gives negative values for every delta sufficiently close to one from below", "At least two distinct interior zeros for the rational parameter pair"],
+    "finite_checks": {"recurrence_steps_per_degree": 10000, "integer_scale": 1000000000000, "degrees": ["33/64", "3/2", "159/64"], "terminating_series_controls": 18},
+    "not_covered": ["Classification on positive-valued or suitable zero-free regions", "Uniform moving-shift endpoint asymptotics", "General strict-log-concavity polynomial conjectures, the discrete-to-continuous shift conjecture, and the Prekopa-Ninh comparison in the posing slide deck"],
+    "sibling_attribution": "Karp, arXiv:1203.1482v1, Lemma 3 gives the geometric equality boundary up to a constant factor; Theorem 1 proves the strict-log-concavity alpha=beta=1 positive-coefficient case. These prior polynomial results are credited, not presented as new."
+  }
+}

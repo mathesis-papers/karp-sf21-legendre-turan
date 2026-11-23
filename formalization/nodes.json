@@ -1,0 +1,277 @@
+{
+  "nodes": [
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s1",
+      "contributor": null,
+      "identity": "collected:karp-sf21-legendre-turan:2:s1",
+      "kind": "paper",
+      "label": "Theorem",
+      "lean_source": {
+        "revision": "b8d708b1b89112061f30f218f031c1bf3672ebd8",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/b8d708b1b89112061f30f218f031c1bf3672ebd8/D5/S3/Analytic/GaussZeroBalanced/FractionalLegendreTuran.lean"
+      },
+      "lineage": "collected:karp-sf21-legendre-turan:s1",
+      "macros": {
+        "\\F": "F"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "karp-sf21-legendre-turan",
+      "scope": "in_scope",
+      "statement": "Let $y_*=4095/4096$. Then\n\\begin{align*}\n -\\frac{23}{10}&\\leq \\F_{33/64}(y_*)\\leq-\\frac{227}{100},\\\\\n \\frac{181}{100}&\\leq \\F_{3/2}(y_*)\\leq\\frac{184}{100},\\\\\n -\\frac{153}{100}&\\leq \\F_{159/64}(y_*)\\leq-\\frac{150}{100}.\n\\end{align*}\nConsequently,\n\\begin{equation}\n T_{3/2,\\,63/64}(y_*)\\leq\n \\left(\\frac{184}{100}\\right)^2-\n \\frac{227}{100}\\frac{150}{100}\n =-\\frac{97}{5000}<0.\n\\end{equation}\nThus both the strict and non-strict forms of the conjectured comparison\nfail, even with $\\mu-\\delta>0$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "A rational counterexample to Karp's fractional-degree Legendre Turán conjecture",
+      "toolchain": null,
+      "version": 2,
+      "work": "karp-sf21-legendre-turan"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s2",
+      "contributor": null,
+      "identity": "collected:karp-sf21-legendre-turan:2:s2",
+      "kind": "paper",
+      "label": "Lemma",
+      "lean_source": {
+        "revision": "b8d708b1b89112061f30f218f031c1bf3672ebd8",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/b8d708b1b89112061f30f218f031c1bf3672ebd8/D5/S3/Analytic/GaussZeroBalanced/FractionalLegendreTuran.lean"
+      },
+      "lineage": "collected:karp-sf21-legendre-turan:s2",
+      "macros": {
+        "\\F": "F"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "karp-sf21-legendre-turan",
+      "scope": "in_scope",
+      "statement": "If $N\\geq\\nu\\geq0$, $0<y<1$, and $S_N=\\sum_{n=0}^N u_n$, then\n\\[\n |\\F_\\nu(y)-S_N|\\leq |u_N|\\frac{y}{1-y}.\n\\]",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "A rational counterexample to Karp's fractional-degree Legendre Turán conjecture",
+      "toolchain": null,
+      "version": 2,
+      "work": "karp-sf21-legendre-turan"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s3",
+      "contributor": null,
+      "identity": "collected:karp-sf21-legendre-turan:2:s3",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "b8d708b1b89112061f30f218f031c1bf3672ebd8",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/b8d708b1b89112061f30f218f031c1bf3672ebd8/D5/S3/Analytic/GaussZeroBalanced/FractionalLegendreTuran.lean"
+      },
+      "lineage": "collected:karp-sf21-legendre-turan:s3",
+      "macros": {
+        "\\F": "F"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "karp-sf21-legendre-turan",
+      "scope": "in_scope",
+      "statement": "There is an open neighborhood of $(3/2,63/64,4095/4096)$ on which\n$\\mu>\\delta>0$, $\\delta<1$, $0<y<1$, and $T_{\\mu,\\delta}(y)<0$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "A rational counterexample to Karp's fractional-degree Legendre Turán conjecture",
+      "toolchain": null,
+      "version": 2,
+      "work": "karp-sf21-legendre-turan"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s4",
+      "contributor": null,
+      "identity": "collected:karp-sf21-legendre-turan:2:s4",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "b8d708b1b89112061f30f218f031c1bf3672ebd8",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/b8d708b1b89112061f30f218f031c1bf3672ebd8/D5/S3/Analytic/GaussZeroBalanced/FractionalLegendreTuran.lean"
+      },
+      "lineage": "collected:karp-sf21-legendre-turan:s4",
+      "macros": {
+        "\\F": "F"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "karp-sf21-legendre-turan",
+      "scope": "in_scope",
+      "statement": "For every fixed $\\mu>0$ and $0<\\delta<1$, there is\n$\\varepsilon=\\varepsilon(\\mu,\\delta)>0$ such that\n$T_{\\mu,\\delta}(y)>0$ for $0<y<\\varepsilon$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "A rational counterexample to Karp's fractional-degree Legendre Turán conjecture",
+      "toolchain": null,
+      "version": 2,
+      "work": "karp-sf21-legendre-turan"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s5",
+      "contributor": null,
+      "identity": "collected:karp-sf21-legendre-turan:2:s5",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "b8d708b1b89112061f30f218f031c1bf3672ebd8",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/b8d708b1b89112061f30f218f031c1bf3672ebd8/D5/S3/Analytic/GaussZeroBalanced/FractionalLegendreTuran.lean"
+      },
+      "lineage": "collected:karp-sf21-legendre-turan:s5",
+      "macros": {
+        "\\F": "F"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "karp-sf21-legendre-turan",
+      "scope": "in_scope",
+      "statement": "For every fixed $\\mu>0$ and $0<\\delta<1$,\n\\begin{equation}\n T_{\\mu,\\delta}(y)=\\frac{\\sin^2(\\pi\\delta)}{\\pi^2}\n                 \\log^2(1-y)+O(|\\log(1-y)|),\\qquad y\\uparrow1.\n\\end{equation}\nIn particular, $T_{\\mu,\\delta}$ is positive sufficiently near $y=1$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "A rational counterexample to Karp's fractional-degree Legendre Turán conjecture",
+      "toolchain": null,
+      "version": 2,
+      "work": "karp-sf21-legendre-turan"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s6",
+      "contributor": null,
+      "identity": "collected:karp-sf21-legendre-turan:2:s6",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "b8d708b1b89112061f30f218f031c1bf3672ebd8",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/b8d708b1b89112061f30f218f031c1bf3672ebd8/D5/S3/Analytic/GaussZeroBalanced/FractionalLegendreTuran.lean"
+      },
+      "lineage": "collected:karp-sf21-legendre-turan:s6",
+      "macros": {
+        "\\F": "F"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "karp-sf21-legendre-turan",
+      "scope": "in_scope",
+      "statement": "For each positive noninteger $\\mu$, there exist $y_\\mu\\in(0,1)$\nand $\\eta_\\mu\\in(0,1)$ such that\n$T_{\\mu,\\delta}(y_\\mu)<0$ for every $1-\\eta_\\mu<\\delta<1$.\nIf $\\mu>1$, all three degrees are positive.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "A rational counterexample to Karp's fractional-degree Legendre Turán conjecture",
+      "toolchain": null,
+      "version": 2,
+      "work": "karp-sf21-legendre-turan"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s7",
+      "contributor": null,
+      "identity": "collected:karp-sf21-legendre-turan:2:s7",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "b8d708b1b89112061f30f218f031c1bf3672ebd8",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/b8d708b1b89112061f30f218f031c1bf3672ebd8/D5/S3/Analytic/GaussZeroBalanced/FractionalLegendreTuran.lean"
+      },
+      "lineage": "collected:karp-sf21-legendre-turan:s7",
+      "macros": {
+        "\\F": "F"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "karp-sf21-legendre-turan",
+      "scope": "in_scope",
+      "statement": "The function $T_{3/2,63/64}$ has at least two distinct zeros in $(0,1)$,\none on each side of $4095/4096$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "A rational counterexample to Karp's fractional-degree Legendre Turán conjecture",
+      "toolchain": null,
+      "version": 2,
+      "work": "karp-sf21-legendre-turan"
+    }
+  ]
+}
